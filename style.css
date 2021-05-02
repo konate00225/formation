@@ -1,0 +1,243 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: var(--primary-color)
+}
+
+.navbar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: var(--secondary-color);
+	z-index: 99
+}
+.navbar .logo{
+	height: 40px;
+	width: 40px;
+	border-radius: 50% 50% 0px;
+	background: var(--name-color);
+	margin-left: 20px
+}
+.navbar .nav-link ul{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.navbar .nav-link ul li{
+	list-style-type: none;
+}
+.navbar .nav-link ul li a{
+	text-decoration: none;
+	color: var(--light-color);
+	font-family: var(--font-family);
+	font-weight: 600;
+	margin-right: 50px;
+}
+.bar-left{
+	position: absolute;
+	height: 100vh;
+	width: 5px;
+	top: 0;
+	left: 0;
+	background: var(--bar-left-color);
+	z-index: -1;
+
+}
+.content{
+	display: flex;
+	flex-direction: column;
+	margin-top: 50px
+}
+.home{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: var(--font-family);
+
+	
+}
+.home::before{
+	position: absolute;
+	content: '';
+	background: var(--name-color);
+	height: 400px;
+	width: 400px;
+	right: 160px;
+	transform: skew(345deg) translateY(65px);
+}
+.info{
+	margin-left: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.home img{
+	max-width: 800px;
+	position: relative;
+	filter: drop-shadow(2px 2px 7px rgba(0,0,0,.3));
+}
+.name{
+ color: var(--name-color);
+ font-size: 20px;
+ font-weight: 500
+}
+.profile{
+ color: var(--light-color);
+ font-size: 50px;
+ font-weight: 700;
+ max-width: 400px;
+ line-height: 50px
+}
+.home-about{
+ color: var(--light-color);
+ font-size: 15px;
+ font-weight: 700;
+ max-width: 500px;
+}
+.social-links{
+	display: flex;
+	align-items: center;
+	margin-top: 20px
+
+}
+.social-links label{
+	padding: 5px;
+	background: var(--name-color);
+	margin-left: 10px;
+	transform: skew(345deg);
+	cursor: pointer;
+	
+}
+.social-links img{
+	max-width: 15px;
+	
+}
+.about, .services, C{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+.about h1, .services h1, .portfolio h1{
+	min-width: 400px;
+	margin-left: 30px;
+	color: var(--name-color);
+	font-family: var(--font-family)
+}
+.about p, .services p{
+	font-size: 25px;
+	font-weight: 400;
+	margin-left: 30px;
+	color: var(--light-color);
+	font-family: var(--font-family)
+}
+.portfolio{
+	flex-direction: column;
+}
+.portfolio .container{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.card{
+	position: relative;
+	height: 400px;
+	width: 300px;
+	overflow: hidden;
+ 	background: #191919;
+ 	border-radius: 20px;
+ 	margin-left: 20px
+}
+.card .image{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: .3s
+}
+.card img{
+	position: absolute;
+	max-width: 350px;
+	z-index: 3;
+	transition: .3s
+}
+.card:before{
+	position: absolute;
+	content: '';
+	top: -50%;
+	width: 100%;
+ 	height: 100%;
+	background: blue;
+	transform: skewY(345deg);
+	border-bottom-left-radius: 100px;
+	z-index: 2
+}
+.card:after{
+	 content: 'Sekou';
+	 position: absolute;
+	 left: 17%;
+	 bottom: 0;
+	 width: 100%;
+	 font-size: 3.5em;
+	 font-weight: 600;
+	 color: rgba(240,240,240,.2);
+	 font-family: 'Gill Sans MT';
+	 transform: rotate(-90deg) translate(40%, 80%);
+}
+.card .info{
+	height: 50%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+.card .info{
+	opacity: 0
+}
+.title{
+	font-size: 2.5em;
+	 font-weight: 600;
+	 color: #fff;
+	 font-family: 'Gill Sans MT';
+}
+.tech{
+	font-size: 1em;
+	 font-weight: 600;
+	 color: #fff;
+	 font-family: 'Gill Sans MT';
+	 }
+.view{
+	font-size: 1.2em;
+	 font-weight: 600;
+	 color: #fff;
+	 font-family: 'Gill Sans MT';
+	 background: red;
+	 border-radius: 40px;
+	 padding: 0 10px;
+	 cursor: pointer;
+
+}
+.card:hover .info{
+	opacity: 1;
+	transition: .3s
+}
+.card:hover img{
+	transform: rotate(-40deg);
+	transition: .3s
+}
+.card:hover .image{
+	height: 50%;
+	transition: .3s
+}
